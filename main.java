@@ -1,6 +1,6 @@
 public class main {
 
-    public static void() {
+    public static main void() {
         
     }
 }
