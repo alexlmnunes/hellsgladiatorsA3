@@ -7,4 +7,5 @@ public class Classe {
     private String bonus;
     private String penalidade;
     private String habilidade_especial;
+
 }
