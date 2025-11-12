@@ -1,6 +1,6 @@
 public class Gladiador {
     private String nome;
-    private TipoGladiador tipo;
+    private String tipoClasse;
     private int hp;
     private int hpMaximo;
     private Arma arma;
@@ -9,7 +9,7 @@ public class Gladiador {
     private boolean poderCritico;
     private StatusBatalha status;
 
-    public Gladiador(String nome, String tipoClasse) {
+    public setGladiador(String nome, String tipoClasse) {
         this.nome = nome;
         this.tipoClasse = tipoClasse;
         this.status = new StatusBatalha();
