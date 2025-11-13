@@ -24,7 +24,7 @@ public class Arma{
     }
 
     private void configurarArma(String nome){
-        switch(nome){
+        switch(nome.ToLower()){
 
             case espada:
                 this.forcaBase = 3;
@@ -32,7 +32,7 @@ public class Arma{
                 this.chanceHabilidade = 20;
                 this.ignoraArmadura = false;
                 break;
-        }
+        
         case lanca:
             this.forcaBase = 4;
                 this.habilidadeEspecial = "Desarmar";
@@ -62,7 +62,8 @@ public class Arma{
                 break;    
 
         default:
-            break;    
+            break;  
+            }  
     }
     // GETTERS
 
