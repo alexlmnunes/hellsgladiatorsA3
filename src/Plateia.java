@@ -1,6 +1,3 @@
-package com.gladiators.arena;
-
-import com.gladiators.modelo.*;
 
 public class Plateia {
     private int nivelAnimacao; // 0-100
@@ -9,7 +6,7 @@ public class Plateia {
         this.nivelAnimacao = 50;
     }
     
-    public void reagir(Gladiador vencedor) {
+    public void reagir () {
         System.out.println("\\n=== REAÇÃO DA PLATEIA ===");
         
         if (nivelAnimacao >= 80) {

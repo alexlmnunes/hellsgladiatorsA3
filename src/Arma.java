@@ -24,45 +24,45 @@ public class Arma{
     }
 
     private void configurarArma(String nome){
-        switch(nome.ToLower()){
+        switch(nome.toLowerCase()){
 
-            case espada:
+            case espada -> {
                 this.forcaBase = 3;
                 this.habilidadeEspecial = "Duplo Ataque";
                 this.chanceHabilidade = 20;
                 this.ignoraArmadura = false;
-                break;
+            }
         
-        case lanca:
+        case lanca -> {
             this.forcaBase = 4;
-                this.habilidadeEspecial = "Desarmar";
-                this.chanceHabilidade = 20;
-                this.ignoraArmadura = false;
-                break;
+            this.habilidadeEspecial = "Desarmar";
+            this.chanceHabilidade = 20;
+            this.ignoraArmadura = false;
+            }
 
-        case machado:
+        case machado -> {
             this.forcaBase = 5;
-                this.habilidadeEspecial = "Quebrar armadura";
-                this.chanceHabilidade = 100; // SEMPRE ATIVO APÓS 2 ATAQUES
-                this.ignoraArmadura = false;
-                break; 
+            this.habilidadeEspecial = "Quebrar armadura";
+            this.chanceHabilidade = 100; // SEMPRE ATIVO APÓS 2 ATAQUES
+            this.ignoraArmadura = false;
+            } 
 
-        case rede_adaga:
+        case rede_adaga -> {
             this.forcaBase = 2;
-                this.habilidadeEspecial = "Paralisar";
-                this.chanceHabilidade = 100;
-                this.ignoraArmadura = false;
-                break;
+            this.habilidadeEspecial = "Paralisar";
+            this.chanceHabilidade = 100;
+            this.ignoraArmadura = false;
+            }
 
-        case arco:
+        case arco -> {
             this.forcaBase = 2;
-                this.habilidadeEspecial = "Ignora Armadura";
-                this.chanceHabilidade = 100;
-                this.ignoraArmadura = true;
-                break;    
+            this.habilidadeEspecial = "Ignora Armadura";
+            this.chanceHabilidade = 100;
+            this.ignoraArmadura = true;
+            }    
 
-        default:
-            break;  
+        default -> {
+            }  
             }  
     }
     // GETTERS

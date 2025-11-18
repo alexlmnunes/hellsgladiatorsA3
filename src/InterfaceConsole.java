@@ -28,7 +28,7 @@ public class InterfaceConsole {
         boolean continueLoop = true;
         String nome;
         Gladiador gladiador = new Gladiador();
-
+        Arena arena = new Arena();
         
         System.out.println("Classes disponíveis para escolha:");
         System.out.println("1 - Tanque\nHP: 10\nArma: Machado (Força: 5)\nBônus: Armadura reduz 3 de dano, chance de quebrar armadura do oponente após 2 ataques\nPenalidade: Ataca sempre por último\n\n\n");
@@ -78,6 +78,8 @@ public class InterfaceConsole {
                 default -> System.out.println("Escolha inválida. Por favor, selecione uma classe válida.");
             }
         }
+        arena.iniciarBatalha(gladiador, oponente);
+
         scanner.close();
     }
 

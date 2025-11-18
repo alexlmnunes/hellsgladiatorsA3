@@ -1,4 +1,4 @@
-import com.gladiators.modelo.*;
+
 
 public class SistemaCombate {
     private Gladiador jogador;
@@ -61,7 +61,7 @@ public class SistemaCombate {
         System.out.println(defensor.getNome() + " HP: " + defensor.getHp());
     }
     
-    private void exibirVencedor() {
+    public void exibirVencedor() {
         if (jogador.estaVivo()) {
             System.out.println("🏆 VOCÊ VENCEU! 🏆");
         } else {
@@ -70,6 +70,10 @@ public class SistemaCombate {
     }
     
     public Gladiador obterVencedor() {
-        return jogador.estaVivo() ? jogador : oponente;
+        if (jogador.estaVivo()) {
+            return jogador;
+        } else {
+            return oponente;
+        }
     }
 }
