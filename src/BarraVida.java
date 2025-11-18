@@ -21,4 +21,4 @@
         for (int i = 0; i < blocosVazios; i++) System.out.print(".");
         System.out.println("] " + vidaAtual + "/" + vidaMaxima + RESET);
     }
-}
+
