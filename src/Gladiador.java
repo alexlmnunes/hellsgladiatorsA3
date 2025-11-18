@@ -9,7 +9,11 @@ public class Gladiador {
     private boolean poderCritico;
     private StatusBatalha status;
 
-    public setGladiador(String nome, String tipoClasse) {
+    public Gladiador() {
+        
+    }
+
+    public void setGladiador(String nome, String tipoClasse) {
         this.nome = nome;
         this.tipoClasse = tipoClasse;
         this.status = new StatusBatalha();
@@ -22,7 +26,7 @@ public class Gladiador {
         this.hpMaximo = config[0];
         this.hp = config[0];
         this.reducaoDano = config[1];
-        this.podeCritico = (config[2] == 1);
+        this.poderCritico = (config[2] == 1);
         this.temArmadura = (config[1] > 0);
     }
     
@@ -63,8 +67,8 @@ public class Gladiador {
     public boolean temArmadura() { 
         return temArmadura; 
     }
-    public boolean podeCritico() {
-         return podeCritico; 
+    public boolean poderCritico() {
+         return poderCritico; 
     }
     public StatusBatalha getStatus() { 
         return status; 

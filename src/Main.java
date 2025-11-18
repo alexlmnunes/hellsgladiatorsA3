@@ -1,24 +1,25 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args)  {
+    @SuppressWarnings("ConvertToTryWithResources")
+    public static void main(String[] args) throws InterruptedException  {
         InterfaceConsole ui = new InterfaceConsole();
         Scanner scanner = new Scanner(System.in);
+        OUTER:
         while (true) {
             ui.mostrarMenuPrincipal();
             int opcao = scanner.nextInt();
-            if (opcao == 1) {
-                ui.iniciarJogo();
-            } else if (opcao == 2) {
-                ui.mostrarRegras();
-            } else if (opcao == 3) {
-                ui.mostrarEstatisticas();
-            } else {
-                break;
+            switch (opcao) {
+                case 1 -> ui.iniciarJogo();
+                case 2 -> ui.mostrarRegras();
+                case 3 -> ui.mostrarEstatisticas();
+                default -> {
+                    break OUTER;
+                }
             }
-
         }
 
+        scanner.close();
         
     }
 }

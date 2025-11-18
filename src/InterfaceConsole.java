@@ -1,5 +1,7 @@
+import java.util.Scanner;
+
 public class InterfaceConsole {
-    public void mostrarMenuPrincipal() {
+    public void mostrarMenuPrincipal() throws InterruptedException {
         System.out.println("Hell's Gladiators");
         System.out.print("Carregando");
         Thread.sleep(500);
@@ -20,10 +22,11 @@ public class InterfaceConsole {
         System.out.println("Digite o número correspondente à opção que deseja escolher para começar:");
     }
 
+    @SuppressWarnings("ConvertToTryWithResources")
     public void iniciarJogo() {
         Scanner scanner = new Scanner(System.in);
         boolean continueLoop = true;
-        String nome, tipoClasse;
+        String nome;
         Gladiador gladiador = new Gladiador();
 
         
@@ -37,50 +40,49 @@ public class InterfaceConsole {
             System.out.println("Digite o número correspondente à classe que deseja escolher:");
             int escolha = scanner.nextInt();
             switch (escolha) {
-                case 1:
+                case 1 -> {
                     System.out.println("Você escolheu a classe Tanque!");
                     System.out.print("Digite o nome do seu gladiador: ");
-                    nome = scanner.nextLine;
+                    nome = scanner.nextLine();
                     gladiador.setGladiador(nome, "Tanque");
                     continueLoop = false;
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.println("Você escolheu a classe Assassino!");
                     System.out.print("Digite o nome do seu gladiador: ");
-                    nome = scanner.nextLine;
+                    nome = scanner.nextLine();
                     gladiador.setGladiador(nome, "Assassino");
                     continueLoop = false;
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     System.out.println("Você escolheu a classe Bárbaro!");
                     System.out.print("Digite o nome do seu gladiador: ");
-                    nome = scanner.nextLine;
+                    nome = scanner.nextLine();
                     gladiador.setGladiador(nome, "Bárbaro");
                     continueLoop = false;
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     System.out.println("Você escolheu a classe Lanceiro!");
                     System.out.print("Digite o nome do seu gladiador: ");
-                    nome = scanner.nextLine;
+                    nome = scanner.nextLine();
                     gladiador.setGladiador(nome, "Lanceiro");
                     continueLoop = false;
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     System.out.println("Você escolheu a classe Arqueiro!");
                     System.out.print("Digite o nome do seu gladiador: ");
+                    nome = scanner.nextLine();
                     gladiador.setGladiador(nome, "Arqueiro");
-                    nome = scanner.nextLine;
                     continueLoop = false;
-                    break;
-                default:
-                    System.out.println("Escolha inválida. Por favor, selecione uma classe válida.");
+                }
+                default -> System.out.println("Escolha inválida. Por favor, selecione uma classe válida.");
             }
         }
         scanner.close();
     }
 
     public void mostrarRegras() {
-        System.out.println("Cada classe tem seu HP máximo, arma e habilidade especial. Depois de escolher sua classe, seu gladiador será jogado no Coliseu para lutar contra outros gladiadores e sobreviver eventos especiais...\nCada turno você poderá escolher entre certas ações e o último gladiador com HP é o vencedor!")
+        System.out.println("Cada classe tem seu HP máximo, arma e habilidade especial. Depois de escolher sua classe, seu gladiador será jogado no Coliseu para lutar contra outros gladiadores e sobreviver eventos especiais...\nCada turno você poderá escolher entre certas ações e o último gladiador com HP é o vencedor!");
     }
 
     public void mostrarEstatisticas() {
