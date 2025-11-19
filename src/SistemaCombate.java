@@ -5,6 +5,7 @@ public class SistemaCombate {
     private Gladiador oponente;
     private CalculadorDano calculador;
     private GerenciadorTurnos gerenciadorTurnos;
+    private Plateia plateia;
     
     public SistemaCombate(Gladiador jogador, Gladiador oponente) {
         this.jogador = jogador;
@@ -18,6 +19,7 @@ public class SistemaCombate {
         
         while (jogador.estaVivo() && oponente.estaVivo()) {
             executarTurno();
+            plateia.reagir();
         }
         
         exibirVencedor();

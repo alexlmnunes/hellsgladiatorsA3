@@ -31,10 +31,10 @@ public class InterfaceConsole {
         Arena arena = new Arena();
         
         System.out.println("Classes disponíveis para escolha:");
-        System.out.println("1 - Tanque\nHP: 10\nArma: Machado (Força: 5)\nBônus: Armadura reduz 3 de dano, chance de quebrar armadura do oponente após 2 ataques\nPenalidade: Ataca sempre por último\n\n\n");
-        System.out.println("2 - Assassino\nHP: 7\nArma: Rede e Adaga (Força: 2)\nBônus: Rede paralisa o oponente\nPenalidade: Não tem armadura\n\n\n");
-        System.out.println("3 - Bárbaro\nHP: 9\nArma: Espada (Força: 3)\nBônus: Armadura reduz 2 de dano, chance de fazer o oponente sangrar (+1 de dano por 2 turnos)\nPenalidade: \n\n\n");
-        System.out.println("4 - Lanceiro\nHP: 9\n Arma: Lança (Força: 4)\nBônus: Armadura reduz 1 de dano, chance de desarmar oponente\nPenalidade: \n\n\n");
+        System.out.println("1 - Tanque\nHP: 10\nArma: Machado (Força: 5)\nBônus: Armadura reduz 3 de dano, chance de quebrar armadura do oponente após 2 ataques\nPenalidade: Ataca sempre por último\n\n");
+        System.out.println("2 - Assassino\nHP: 7\nArma: Rede e Adaga (Força: 2)\nBônus: Rede paralisa o oponente\nPenalidade: Não tem armadura\n\n");
+        System.out.println("3 - Bárbaro\nHP: 9\nArma: Espada (Força: 3)\nBônus: Armadura reduz 2 de dano, chance de fazer o oponente sangrar (+1 de dano por 2 turnos)\nPenalidade: \n\n");
+        System.out.println("4 - Lanceiro\nHP: 9\n Arma: Lança (Força: 4)\nBônus: Armadura reduz 1 de dano, chance de desarmar oponente\nPenalidade: \n\n");
         System.out.println("5 - Arqueiro\nHP: 8\nArma: Arco e flecha (Força: 2)\nBônus: Arco ignora armadura, oponente precisa estar perto para atacar\nPenalidade: \n");
         while (continueLoop) {
             System.out.println("Digite o número correspondente à classe que deseja escolher:");
