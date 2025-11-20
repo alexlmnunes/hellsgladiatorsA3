@@ -6,8 +6,6 @@ public int CalcularDano(Gladiador atacante, Gladiador defensor){
     Arma arma = atacante.getArma();
     int danoBase = arma. getForcaBase();
 
-
-
     //1. Verificar crítico
 
     boolean critico = false;
@@ -21,15 +19,26 @@ public int CalcularDano(Gladiador atacante, Gladiador defensor){
 
 // 2 BONÛS DO HOPLOMACHUS DO PRIMEIRO ATAQUE
 
-if (atacante.getTipoCLassa().equals(ConfiguracaoClasse.HOPLOMACHUS)){
-if (atacante.getStatus().isPrimeiroAtaque()){
-danoBase += 2;
-system.out.println(" COUNTER! +2 DANO ");
-}
+if (atacante.getTipoClasse().equals(ConfiguracaoClasse.HOPLOMACHUS) && atacante.getStatus().isPrimeiroAtaque()){
+danoBase *= 2;// Primeiro golpe sempre crítico
+atacante.getStatus().usouPrimeiroAtaque();
+system.out.println(" PRIMEIRO DISPARO FOI PERFEITO! ");
+
 }
 
 // 3.BONUS DO SECUTOR CONTRA RETIARIUS
-if(atacante)
+if(atacante.getTipoClasse().equals(ConfiguracaoClasse.SECUTOR) && defensor.getTipoClasse().equals(ConfiguracaoClasse.RETIARIUS)){
+    danoBase +=2;
+system.out.println(" COUNTER! +2 DE DANO ")
+}
+
+//4. PENALIDADE DO SECUTOR CONTRA OUTRAS CLASSES
+
+if (atacante.getTipoClasse().equals(ConfiguracaoClasse.SECUTOR) && !defensor.getTipoClasse().equals(ConfiguracaoClasse.RETIARIUS)){
+danoBase -=1;
+}
+
+
 }
 }
 
