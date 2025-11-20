@@ -52,7 +52,7 @@ return danoFinal;
 
 }
 
-private void  aplicarHabilidadeArma(Gladiador atacante, Gladiador defensor, Arma arma);
+private void  aplicarHabilidadeArma(Gladiador atacante, Gladiador defensor, Arma arma){
 String habilidade = arma.getHabilidadeEspecial();
 
 switch(habilidade){
@@ -93,6 +93,7 @@ switch(habilidade){
     }
 }
 
+}
 
 
 
