@@ -34,12 +34,12 @@ public class ConfiguracaoClasse {
     // Retorna a arma inicial da classe
     public String getArmaInicial(String tipoClasse) {
         switch (tipoClasse) {
-            case MURMILLO: return Arma.MACHADO;
-            case RETIARIUS: return Arma.REDE_ADAGA;
-            case THRAEX: return Arma.ESPADA;
-            case SECUTOR: return Arma.LANCA;
-            case HOPLOMACHUS: return Arma.ARCO;
-            default: return Arma.ESPADA;
+            case MURMILLO: return Arma.machado;
+            case RETIARIUS: return Arma.rede_adaga;
+            case THRAEX: return Arma.espada;
+            case SECUTOR: return Arma.lanca;
+            case HOPLOMACHUS: return Arma.arco;
+            default: return Arma.espada;
         }
     }
     
