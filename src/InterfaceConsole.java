@@ -29,6 +29,7 @@ public class InterfaceConsole {
         String nome;
         Gladiador gladiador = new Gladiador();
         Arena arena = new Arena();
+        IAOponente oponente = new IAOponente();
         
         System.out.println("Classes disponíveis para escolha:");
         System.out.println("1 - Tanque\nHP: 10\nArma: Machado (Força: 5)\nBônus: Armadura reduz 3 de dano, chance de quebrar armadura do oponente após 2 ataques\nPenalidade: Ataca sempre por último\n\n");
@@ -44,41 +45,42 @@ public class InterfaceConsole {
                     System.out.println("Você escolheu a classe Tanque!");
                     System.out.print("Digite o nome do seu gladiador: ");
                     nome = scanner.nextLine();
-                    gladiador.setGladiador(nome, "Tanque");
+                    gladiador.setGladiador(nome, "Tanque", "machado");
                     continueLoop = false;
                 }
                 case 2 -> {
                     System.out.println("Você escolheu a classe Assassino!");
                     System.out.print("Digite o nome do seu gladiador: ");
                     nome = scanner.nextLine();
-                    gladiador.setGladiador(nome, "Assassino");
+                    gladiador.setGladiador(nome, "Assassino", "rede_adaga");
                     continueLoop = false;
                 }
                 case 3 -> {
                     System.out.println("Você escolheu a classe Bárbaro!");
                     System.out.print("Digite o nome do seu gladiador: ");
                     nome = scanner.nextLine();
-                    gladiador.setGladiador(nome, "Bárbaro");
+                    gladiador.setGladiador(nome, "Bárbaro", "espada");
                     continueLoop = false;
                 }
                 case 4 -> {
                     System.out.println("Você escolheu a classe Lanceiro!");
                     System.out.print("Digite o nome do seu gladiador: ");
                     nome = scanner.nextLine();
-                    gladiador.setGladiador(nome, "Lanceiro");
+                    gladiador.setGladiador(nome, "Lanceiro", "lanca");
                     continueLoop = false;
                 }
                 case 5 -> {
                     System.out.println("Você escolheu a classe Arqueiro!");
                     System.out.print("Digite o nome do seu gladiador: ");
                     nome = scanner.nextLine();
-                    gladiador.setGladiador(nome, "Arqueiro");
+                    gladiador.setGladiador(nome, "Arqueiro", "arco");
                     continueLoop = false;
                 }
                 default -> System.out.println("Escolha inválida. Por favor, selecione uma classe válida.");
             }
         }
-        arena.iniciarBatalha(gladiador, oponente);
+
+        arena.iniciarBatalha(gladiador, oponente.getOponente());
 
         scanner.close();
     }

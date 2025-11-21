@@ -1,33 +1,36 @@
 public class Gladiador {
-    private String nome;
-    private String tipoClasse;
-    private int hp;
-    private int hpMaximo;
-    private Arma arma;
-    private boolean temArmadura;
-    private int reducaoDano;
-    private boolean poderCritico;
-    private StatusBatalha status;
+    protected String nome;
+    protected String tipoClasse;
+    protected int hp;
+    protected int hpMaximo;
+    protected Arma arma;
+    protected int armadura;
+    protected int reducaoDano;
+    protected int chanceCritico;
+    protected int velocidadeAtaque;
+    protected StatusBatalha status;
 
     public Gladiador() {
         
     }
 
-    public void setGladiador(String nome, String tipoClasse) {
+    public void setGladiador(String nome, String tipoClasse, String nomeArma) {
         this.nome = nome;
         this.tipoClasse = tipoClasse;
+        arma.configurarArma(nomeArma);
         this.status = new StatusBatalha();
         
         ConfiguracaoClasse config = new ConfiguracaoClasse();
         aplicarConfiguracao(config.getConfiguracao(tipoClasse));
     }
     
-    private void aplicarConfiguracao(int[] config) {
+    protected void aplicarConfiguracao(int[] config) {
         this.hpMaximo = config[0];
         this.hp = config[0];
         this.reducaoDano = config[1];
-        this.poderCritico = (config[2] == 1);
-        this.temArmadura = (config[1] > 0);
+        this.armadura = config[2];
+        this.chanceCritico = config[3];
+        velocidadeAtaque = config[4];
     }
     
     public void receberDano(int dano) {
@@ -64,13 +67,17 @@ public class Gladiador {
     public int getReducaoDano() {
          return reducaoDano; 
     }
-    public boolean temArmadura() { 
-        return temArmadura; 
+    public int getArmadura() { 
+        return armadura; 
     }
-    public boolean poderCritico() {
-         return poderCritico; 
+    public int getCritico() {
+         return chanceCritico; 
     }
     public StatusBatalha getStatus() { 
         return status; 
     }
+
+    public int getVelocidadeAtaque() {
+        return velocidadeAtaque;
+    } 
 }
