@@ -79,8 +79,8 @@ public class InterfaceConsole {
                 default -> System.out.println("Escolha inválida. Por favor, selecione uma classe válida.");
             }
         }
-
-        arena.iniciarBatalha(gladiador, oponente.getOponente());
+        oponente.getOponente();
+        arena.iniciarBatalha(gladiador, oponente);
 
         scanner.close();
     }
@@ -92,5 +92,6 @@ public class InterfaceConsole {
     public void mostrarEstatisticas() {
 
     }
+
 
 }
