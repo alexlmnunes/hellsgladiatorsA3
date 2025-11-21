@@ -1,6 +1,3 @@
-package com.gladiators.util;
-
-import com.gladiators.ranking.*;
 import java.io.*;
 import java.util.ArrayList;
 

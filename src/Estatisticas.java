@@ -1,4 +1,3 @@
-package com.gladiators.ranking;
 
 public class Estatisticas {
     private String nome;

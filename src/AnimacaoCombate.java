@@ -1,5 +1,3 @@
-package com.gladiators.ui;
-
 public class AnimacaoCombate {
     
     public static void mostrarAtaque(String atacante, String defensor, int dano) {
