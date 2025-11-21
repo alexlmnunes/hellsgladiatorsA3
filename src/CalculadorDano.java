@@ -13,7 +13,7 @@ public int CalcularDano(Gladiador atacante, Gladiador defensor){
     if(atacante.poderCritico() && Aleatorio.chance(CHANCE_CRITICO)){
     danoBase *= 2;
     critico = true;
-    System.out.println(" CRÍTICO! ")
+    System.out.println(" CRÍTICO! ");
     
 }
 
@@ -29,7 +29,7 @@ System.out.println(" PRIMEIRO DISPARO FOI PERFEITO! ");
 // 3.BONUS DO SECUTOR CONTRA RETIARIUS
 if(atacante.getTipoClasse().equals(ConfiguracaoClasse.SECUTOR) && defensor.getTipoClasse().equals(ConfiguracaoClasse.RETIARIUS)){
     danoBase +=2;
-System.out.println(" COUNTER! +2 DE DANO ")
+System.out.println(" COUNTER! +2 DE DANO ");
 }
 
 //4. PENALIDADE DO SECUTOR CONTRA OUTRAS CLASSES
@@ -45,7 +45,7 @@ aplicarHabilidadeArma(atacante,defensor,arma);
 int danoFinal = danoBase;
 if (!arma.ignoraArmadura() && defensor.temArmadura()){
     danoFinal = danoBase - defensor.getReducaoDano();
-    if (danoFinal < 0) dano final = 0;
+    if (danoFinal < 0) danoFinal = 0;
 }
 
 return danoFinal;
@@ -58,15 +58,15 @@ String habilidade = arma.getHabilidadeEspecial();
 switch(habilidade){
     case "Duplo Ataque":
         if(Aleatorio.chance(arma.getChanceHabilidade())){
-            system.out.println(" DUPLO ATAQUE");
+            System.out.println(" DUPLO ATAQUE");
             // Segundo ataque será executado no próximo turno
         }
         break;
 
     case "Desarmar":
         if(Aleatorio.chance(arma.getChanceHabilidade())){
-            defensor.getStatus().Desarmar();
-            system.out.println(" DESARME! Oponente perde arma! ")
+            defensor.getStatus().desarmar();
+            System.out.println(" DESARME! Oponente perde arma! ")
         }
         break;
 
@@ -74,20 +74,20 @@ switch(habilidade){
         defensor.getStatus().adicionarGolpeEscudo();
         if(defensor.getStatus().getGolpesNoEscudo() >= 2){
             defensor.quebrarArmadura();
-            system.out.println(" ARMADURA DESTRUÍDA ");
+            System.out.println(" ARMADURA DESTRUÍDA ");
         }
         break;
 
     case "Paralisar":
-        defensor.getStatus().Paralisar();
-        system.out.println(" PARALISADO! Perde o próximo turno")
+        defensor.getStatus().paralisar();
+        System.out.println(" PARALISADO! Perde o próximo turno")
         break;    
 }
     //SANGRAMENTO DO THRAEX
-    if(atacante.getTipoCLasse().equals(ConfiguracaoClasse.THRAEX)){
+    if(atacante.getTipoClasse().equals(ConfiguracaoClasse.THRAEX)){
        if(Aleatorio.chance(20)){
         defensor.getStatus().causarSangramento();
-        system.out.println(" SANGRAMENTO! 1 DANO POR 2 TURNOS !")
+        System.out.println(" SANGRAMENTO! 1 DANO POR 2 TURNOS !")
        } 
 
     }
