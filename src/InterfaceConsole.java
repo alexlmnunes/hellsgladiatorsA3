@@ -78,7 +78,7 @@ public class InterfaceConsole {
                 default -> System.out.println("Escolha inválida. Por favor, selecione uma classe válida.");
             }
         }
-        arena.iniciarBatalha(gladiador, oponente);
+        arena.iniciarBatalha(gladiador , gladiador);
 
         scanner.close();
     }
